@@ -1,5 +1,5 @@
 body {
-    background: rgb(147, 100, 209);
+    background: linear-gradient(rgb(139, 78, 186),rgb(117, 157, 221),rgb(79, 96, 192), rgb(117,157,221), rgb(139,78,186));
     color: rgb(6,4,125);
     padding:10px;
     font-family: fantasy;
@@ -37,7 +37,7 @@ h1 {
 }
 a {
     text-decoration: none;
-    color: #fff;
+    color: #eb8d8d;
 }
 /*main container area beneath menu*/
 main {
