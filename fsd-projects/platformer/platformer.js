@@ -29,17 +29,25 @@ $(function () {
     // TODO 1 - Enable the Grid
     toggleGrid();
     createPlatform(850,650,150,20, "yellow");
-    createPlatform(1000,550,85,25,"red");
-    createPlatform(1250,500,75,25, "blue");
-    createPlatform(900,375,125,20, "green");
+    createPlatform(1000,550,85,15,"red");
+    createPlatform(1250,500,75,15, "blue");
+    createPlatform(900,375,125,15, "green");
     createPlatform(550,450,25,10,"purple")
-    createPlatform(200,400,100,20,"orange")
+    createPlatform(350,500,100,15,"orange")
+    createPlatform(350,300,100,15)
+    createPlatform(125,400,90,15,"black")
+    createPlatform(500,200,900,15)
+    createPlatform(750,450,75,15)
+    createPlatform(1200,150,15,50)
 
     // TODO 2 - Create Platforms
 
-    createCollectable("database",200,170,0.5,0.7);
-    createCollectable("database",545,375,0.5,0.5);
-    createCollectable("database",950,300,0.5,0.5);
+    createCollectable("database",200,170,0.5,1);
+    createCollectable("database",545,375,0.5,0.7);
+    createCollectable("database",950,300,0.5,0.7);
+    createCollectable("database",400,200,0.5,0.5)
+    createCollectable("database",1300,10,0.5,0.7);
+    createCollectable("database",100,100,0.5,1);
 
 
 
@@ -47,6 +55,7 @@ $(function () {
     createCannon("right",775,1300)
     createCannon("top",1200,1100)
     createCannon("right",725,1300)
+    createCannon("top",1025,1125)
     
 
 
