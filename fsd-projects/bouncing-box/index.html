@@ -66,6 +66,7 @@
 			//////////////////////////////////////////////////////////////////
 
 			// TODO 2 - Variable declarations 
+			var positionX = 0;
 
 
 
@@ -75,7 +76,9 @@
 			turn it around! 
 			*/
 			function update() {
-
+				moveBoxTo(300);
+				moveBoxTo(positionX);
+				positionX = positionX + 10;
 
 			};
 
