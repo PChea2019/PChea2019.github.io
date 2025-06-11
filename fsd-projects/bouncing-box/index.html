@@ -19,6 +19,10 @@
 			/* Change me! */
 			left: 0px;
 		}
+		body {
+			background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(0, 128, 128, 1) 51%, rgba(178, 83, 237, 1) 100%);
+		}
+
 
 		.board {
 			height: 100vh;
@@ -132,7 +136,7 @@
 				(function getRandomColor() {
 					colorStr = "rgb(" + randomNumberR + ", " + randomNumberG + ", " + randomNumberB + ")"
 					box.css("background-color", colorStr)
-				})()
+				})() /*Function, and then immediately calls it; rather nifty*/
 
 				
 				

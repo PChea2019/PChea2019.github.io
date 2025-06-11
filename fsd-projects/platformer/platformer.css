@@ -1,9 +1,10 @@
 body {
   margin: 0px;
+  background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(0, 128, 128, 1) 51%, rgba(178, 83, 237, 1) 100%);
 }
 
 canvas {
-  background-color: lightblue;
+  background: 
   margin: 20px;
 }
 
