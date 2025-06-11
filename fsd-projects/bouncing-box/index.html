@@ -52,10 +52,12 @@
 
 
 			// Every 50 milliseconds, call the update Function (see below)
-			setInterval(update, 50);
+			var interval = setInterval(update, 50);
+			var misclicks = 0
 
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
+			board.on('click', handleBoxClick);
 
 			// moves the Box to a new position on the screen along the X-Axis
 			function moveBoxTo(newPositionX, newPositionY) {
@@ -97,6 +99,7 @@
 			function update() {
 				moveBoxTo(300, 300);
 				moveBoxTo(positionX, positionY)
+				//positionY = positionY + speedY;
 				positionX = positionX + speedX;
 				if (positionX > boardWidth){
 					speedX *= -1;
@@ -113,7 +116,13 @@
 				else if (positionY < 0){
 					speedY *= -1;
 				}
+				points = points - misclicks; 
 
+				if (points <= -1) {
+					(function endGame() {
+						clearInterval(interval);
+					})()
+				}
 			};
 
 			/* 
@@ -142,6 +151,13 @@
 				
 
 
+			};
+			function handleBoardClick(){
+				points = points - 1
+				speedX *= -1
+				speedY *= -1
+				positionX = randNumX
+				positionY = randNumY
 			};
 
 
