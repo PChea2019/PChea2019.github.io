@@ -70,6 +70,7 @@
 			function changeBoxText(newText) {
 				box.text(newText);
 			}
+		})
 
 			//////////////////////////////////////////////////////////////////
 			/////////////////// YOUR CODE BELOW HERE /////////////////////////
@@ -129,12 +130,11 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				points++;
+				points = points + 2;
 				positionX = randNumX;
 				positionY = randNumY;
 				randNumX = Math.random() * boardWidth;
 				randNumY = Math.random() * boardHeight;
-				points++;
 				changeBoxText(points);
 				speedX = (points * 3) + 10;
 				speedY = (points * 3) + 10;
@@ -154,20 +154,26 @@
 			function handleBoardClick(){
 				points = points - 1
 				changeBoxText(points);
-				speedX = (points * 3) + 10;
-				speedY = (points * 3) + 10;
+				speedX = (points * 3) - 10;
+				speedY = (points * 3) - 10;
 				speedX *= -1
 				speedY *= -1
 				positionX = randNumX
 				positionY = randNumY
-			};
+				randomNumberR = Math.random() * 225;
+				randomNumberG = Math.random() * 225;
+				randomNumberB = Math.random() * 225;
+				(function getRandomColor() {
+					colorStr = "rgb(" + randomNumberR + ", " + randomNumberG + ", " + randomNumberB + ")"
+					box.css("background-color", colorStr)
+			});
 
 
 
 
 
 
-		})();
+		}
 	</script>
 </body>
 
