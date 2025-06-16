@@ -53,6 +53,10 @@
 
 			// Every 50 milliseconds, call the update Function (see below)
 			var interval = setInterval(update, 50);
+			function endGame() {
+				clearInterval(interval);
+			}
+
 			
 
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
@@ -118,9 +122,9 @@
 					speedY *= -1;
 				} 
 
-				if (points <= -1) {
-					clearInterval(interval);
-				}
+				//if (points <= -10) {
+					//endGame();
+				//}
 			};
 
 			/* 
@@ -169,6 +173,7 @@
 					colorStr = "rgb(" + randomNumberR + ", " + randomNumberG + ", " + randomNumberB + ")"
 					box.css("background-color", colorStr)
 				})()
+
 			};
 
 
