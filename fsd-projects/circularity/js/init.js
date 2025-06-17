@@ -28,22 +28,24 @@ var init = function (window) {
         function drawCircly() {
             circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);
             physikz.addRandomVelocity(circle, canvas, 5, 5);
-             view.addChild(circle);
-             circles.push(circle);
+            view.addChild(circle);
+            circles.push(circle);
         }
 
 
         // TODO 3 : Call the drawCircle() function
-        drawCircly();
-        drawCircly();
-        drawCircly();
-        drawCircly();
-        drawCircly();
+        //drawCircly();
+        //drawCircly();
+        //drawCircly();
+        //drawCircly();
+        //drawCircly();
         
 
 
         // TODO 7 : Use a loop to create multiple circles
-
+        for (var circle = 0; circle < 25; circle++){
+            drawCircly();
+        }
 
 
 
