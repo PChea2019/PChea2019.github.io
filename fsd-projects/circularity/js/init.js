@@ -25,7 +25,7 @@ var init = function (window) {
 
 
         // TODO 2 : Create a function that draws a circle 
-        function circly() {
+        function drawCircly() {
             circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);
             physikz.addRandomVelocity(circle, canvas, 5, 5);
              view.addChild(circle);
@@ -34,13 +34,13 @@ var init = function (window) {
 
 
         // TODO 3 : Call the drawCircle() function
-        circly();
-        circles = [0]
-        physikz.updatePosition([])
-        physikz.updatePosition([])
-        physikz.updatePosition([])
-        physikz.updatePosition([])
-        physikz.updatePosition([])
+        drawCircly();
+        drawCircly();
+        drawCircly();
+        drawCircly();
+        drawCircly();
+
+
 
         // TODO 7 : Use a loop to create multiple circles
 
@@ -59,7 +59,11 @@ var init = function (window) {
         function update() {
             // TODO 4 : Update the position of each circle using physikz.updatePosition()
 
-            
+            physikz.updatePosition([0])
+            physikz.updatePosition([1])
+            physikz.updatePosition([2])
+            physikz.updatePosition([3])
+            physikz.updatePosition([4])
             // TODO 5 : Call game.checkCirclePosition() on your circles
            
 
