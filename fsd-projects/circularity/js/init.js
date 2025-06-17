@@ -21,7 +21,7 @@ var init = function (window) {
         
         // TODO 1 : Declare and initialize our variables
         var circle;
-        var circles = []
+        var circles = [];
 
 
         // TODO 2 : Create a function that draws a circle 
@@ -34,16 +34,19 @@ var init = function (window) {
 
 
         // TODO 3 : Call the drawCircle() function
-        //drawCircly();
-        //drawCircly();
-        //drawCircly();
-        //drawCircly();
-        //drawCircly();
+        drawCircly();
+        drawCircly();
+        drawCircly();
+        drawCircly();
+        drawCircly();
+
+        // console.log(circles);
+        // console.log(circles.length);
         
 
 
         // TODO 7 : Use a loop to create multiple circles
-        for (var circle = 0; circle < 25; circle++){
+        for (var countCircle = 0; countCircle < 100; countCircle++){
             drawCircly();
         }
 
@@ -60,21 +63,24 @@ var init = function (window) {
         */
         function update() {
             // TODO 4 : Update the position of each circle using physikz.updatePosition()
-
-            physikz.updatePosition(circles[0])
-            physikz.updatePosition(circles[1])
-            physikz.updatePosition(circles[2])
-            physikz.updatePosition(circles[3])
-            physikz.updatePosition(circles[4])
+    
+            // physikz.updatePosition(circles[0])
+            // physikz.updatePosition(circles[1])
+            // physikz.updatePosition(circles[2])
+            // physikz.updatePosition(circles[3])
+            // physikz.updatePosition(circles[4])
             // TODO 5 : Call game.checkCirclePosition() on your circles
-            game.checkCirclePosition(circles[0])
-            game.checkCirclePosition(circles[1])
-            game.checkCirclePosition(circles[2])
-            game.checkCirclePosition(circles[3])
-            game.checkCirclePosition(circles[4])
+            // game.checkCirclePosition(circles[0])
+            // game.checkCirclePosition(circles[1])
+            // game.checkCirclePosition(circles[2])
+            // game.checkCirclePosition(circles[3])
+            // game.checkCirclePosition(circles[4])
 
             // TODO 8 / TODO 9 : Iterate over the array
-           
+           for (var round = 0; round < circles.length; round++){
+                physikz.updatePosition(circles[round])
+                game.checkCirclePosition(circles[round])
+           }
             
         }
     
@@ -113,7 +119,7 @@ var init = function (window) {
         
         game.circle = circle;
         game.circles = circles;
-        game.drawCircle = drawCircle;
+        game.drawCircle = drawCircly;
         game.update = update;
         
         app.addUpdateable(window.opspark.game);
