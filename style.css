@@ -3,8 +3,8 @@
 ///////////////////-First Page/////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////*/
 body {
-    background: linear-gradient(rgb(139, 78, 186),rgb(117, 157, 221),rgb(79, 96, 192), rgb(117,157,221), rgb(139,78,186));
-    color: rgb(6,4,125);
+    background: linear-gradient(rgb(221, 119, 10),rgb(201, 165, 2),rgb(224, 147, 15), rgb(201,165,2), rgb(221,119,10));
+    color: rgb(105, 76, 9);
     padding:10px;
     font-family: fantasy;
 }
@@ -14,18 +14,19 @@ body {
 }
 /*navigation menu*/
 nav {
-    background: rgb(47, 128, 69);
+    background: rgb(206, 132, 13);
     margin: 0 auto;
     display: flex;
     padding: 10px;
     justify-content: space-between;
     margin-bottom: 20px;
     border-radius: 10%;
+    border-color: rgb(169,161,10)
 }
 h1 {
     display: flex;
     align-items: center;
-    color: white;
+    color: rgb(255, 217, 5);
     flex: 1;
     margin: 0;
 }
@@ -41,16 +42,16 @@ h1 {
 }
 a {
     text-decoration: none;
-    color: #eb8d8d;
+    color: rgb(255, 217, 5);
 }
 /*main container area beneath menu*/
 main {
-    background: rgb(117, 167, 186);
+    background: rgb(193, 123, 47);
     display: flex;
     margin-top: 20px;
     border: 3px solid;
     border-radius: 5%;
-    border-color: maroon;
+    border-color: rgb(167, 90, 13);
 }
 .sidebar {
     margin-right: 20px;
@@ -60,7 +61,7 @@ main {
     width: 200px;
     border-radius: 25%;
     border: 5px solid;
-    border-color: silver;
+    border-color: rgb(167, 90, 13);
 }
 .content {
     flex: 1;
@@ -68,7 +69,7 @@ main {
 }
 /*interests section styles*/
 #interests {
-    border: 4px silver ridge;
+    border: 4px rgb(167, 116, 13) ridge;
     padding: 8px;
     margin-top: 20px;
 }
@@ -76,7 +77,7 @@ h2, h3 {
     margin: 0px;
 }
 .links {
-    color: rgb(107, 245, 199);
+    color: rgb(128, 75, 6);
     text-decoration: Underline;
 }
 /*/////////////////////////////////////////////////////////////////////////////////
@@ -86,24 +87,24 @@ h2, h3 {
 /*portfolio styles*/
 
 .content h1 {
-    color:rgb(19, 34, 208);
+    color:rgb(124, 75, 2);
 }
 #portfolio {
     list-style-type:none;
     padding-left: 0;
 }
 #portfolio li {
-    Background: #2d5708;
+    Background: #9a5404;
     padding: 10px;
     border-radius: 10px;
     margin-bottom:10px;
 }
 #portfolio li:hover {
-    background: #ae9ce5;
+    background: #f1b613;
 }
 #portfolio a {
     text-decoration: none;
-    color: #0febf3;
+    color: #ede917;
 }
 /*///////////////////////////////////////////////////////////////////////////
 /////////////////////////Responsive Web Design//////////////////////////////
