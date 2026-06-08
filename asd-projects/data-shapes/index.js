@@ -69,11 +69,16 @@ $(document).ready(function () {
 
   // TODO 4-a: add a function that handles the good display type
   function handleGood (color, shape, repeat){
-    setBackgroundWithSimple (color, shape, repeat)
+    setBackgroundWithSimple (color, shape, repeat);
     animationDetails.displayType = 2
   }
 
   // TODO 5-a: add a function that handles the bad display type
+  function handleBad (data, repeat) {
+    repeat ++
+    setBackgroundWithMixed (data, repeat)
+    animationDetails.displayType = 3
+  }
   
 
   /////////////////////////////////////////////////
@@ -82,18 +87,20 @@ $(document).ready(function () {
 
   function staticDisplay() {
     // TODO 3-b: call your handleStatic function
-    handleStatic(currentShape)
+    handleStatic(dataShapes[currentIndex])
   }
 
   function goodDisplay() {
     // TODO 4-b: call your handleGood function
-    currentShape = dataShapes[i]
+    var currentShape = dataShapes[currentIndex]
     handleGood(currentShape.color, currentShape.shape, currentShape.repeat)
   }
 
   function badDisplay() {
     // TODO 5-b: call your handleBad function
-    
+    var currentShape = dataShapes[currentIndex];
+    var repeat = currentShape.repeat;
+    handleBad (currentShape, repeat)
   }
 
   /////////////////////////////////////////////////
