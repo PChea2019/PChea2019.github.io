@@ -1,6 +1,6 @@
 #board {
   background: black;
-  width: 650px;
+  width: 850px;
   height: 525px;
   left: 0px;
   top: 0px;
@@ -13,5 +13,5 @@
   position: absolute;
 }
 body {
-  background-color: black;
+  background-color: grey;
 }
