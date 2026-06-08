@@ -62,6 +62,7 @@ $(document).ready(function () {
 
   // TODO 3-a: add a function that handles the static display type
   function handleStatic (data) {
+    resetDisplay()
     setBackgroundWithObject (data)
     animationDetails.displayType = 1
 
@@ -69,13 +70,23 @@ $(document).ready(function () {
 
   // TODO 4-a: add a function that handles the good display type
   function handleGood (color, shape, repeat){
+    resetDisplay()
     setBackgroundWithSimple (color, shape, repeat);
     animationDetails.displayType = 2
   }
 
   // TODO 5-a: add a function that handles the bad display type
+  /*
   function handleBad (data, repeat) {
     repeat ++
+    setBackgroundWithMixed (data, repeat)
+    animationDetails.displayType = 3
+  }
+  */
+  function handleBad (data, repeat) {
+    repeat ++
+    resetDisplay()
+    currentIndex = Math.floor(Math.random() * (dataShapes.length - 1)) + 1
     setBackgroundWithMixed (data, repeat)
     animationDetails.displayType = 3
   }
