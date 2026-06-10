@@ -58,7 +58,7 @@ function init() {
   makeApple();
 
   // TODO 6, Part 1: Initialize the interval
-  updateinterval = setInterval(update, 100)
+  updateInterval = setInterval(update, 100)
 
 
 }
@@ -77,6 +77,11 @@ function update() {
   if(started){ 
     moveSnake();
   }
+ /*
+  else {
+    return
+  }
+  */
   if (hasHitWall() || hasCollidedWithSnake()) {
     endGame();
   }
@@ -249,6 +254,7 @@ function endGame() {
   // clear board of all elements
   board.empty();
 
+  //snake === []
   // update the highScoreElement to display the highScore
   highScoreElement.text("High Score: " + calculateHighScore());
   scoreElement.text("Score: 0");
