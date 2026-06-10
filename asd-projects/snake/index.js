@@ -122,9 +122,9 @@ function moveSnake() {
     stored in the Array snake.body and each part knows its current 
     column/row properties. 
   */
-  for (var i = snake.body.length - 1; i >= 0; i--) {
+  for (var i = snake.body.length - 1; i > 0; i--) {
     var currentSnakeSquare = snake.body[i]
-    var snakeSquareInFront = snake.body[snake.body.length - i]
+    var snakeSquareInFront = snake.body[i - 1]
     moveBodyAToBodyB (currentSnakeSquare, snakeSquareInFront);
     repositionSquare(currentSnakeSquare);
   }
@@ -176,10 +176,26 @@ function hasHitWall() {
     
     HINT: What will the row and column of the snake's head be if this were the case?
   */
-
-
+  if (0 > snake.head.row) {
+    return true
+  }
+  
+  if (0 > snake.head.column){
+    return true
+  }
+  
+  if (snake.head.row > ROWS){
+    return true
+  }
+  
+  if (snake.head.column > COLUMNS){
+    return true
+  }
+  
+  
 
   return false;
+  
 }
 
 function hasCollidedWithApple() {
