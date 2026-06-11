@@ -2,8 +2,22 @@ body {
     background-color: lightblue;
 }
 #die {
+    top: 25px;
+    left: 25px;
     height: 100px;
     width: 100px;
     background-color: lightslategray;
     position: relative;
+    border-color: wheat;
+    border-width: 5px;
+}
+#dietwo {
+    top: 100px;
+    left: 150px;
+    height: 100px;
+    width: 100px;
+    background-color: wheat;
+    position: relative;
+    border-color: lightslategray;
+    border-width: 5px;
 }
