@@ -231,13 +231,16 @@ function handleAppleCollision() {
   // Remove existing Apple and create a new one
   apple.element.remove();
   makeApple();
+  // if (score > 1) {
+  //   makeApple();
+  // }
 
   var row = snake.tail.row;
   var column = snake.tail.column;
   
-  makeSnakeSquare(row, column);
-  snake.tail.element.css("background-color", colors[colorIndex]);
-  colorIndex = (colorIndex + 1) % colors.length;
+  // makeSnakeSquare(row, column);
+  // snake.tail.element.css("background-color", colors[colorIndex]);
+  // colorIndex = (colorIndex + 1) % colors.length;
 
 }
 
@@ -269,12 +272,13 @@ function endGame() {
 
   // clear board of all elements
   board.empty();
-
+  alert ("Game! Your score was: " + score);
   //snake === []
   // update the highScoreElement to display the highScore
   highScoreElement.text("High Score: " + calculateHighScore());
   scoreElement.text("Score: 0");
   score = 0;
+  
 
   // restart the game after 500 ms
   setTimeout(init, 500);
@@ -314,7 +318,8 @@ function makeSnakeSquare(row, column) {
   }
   snake.body.push(snakeSquare);
   snake.tail = snakeSquare
-  
+  snake.tail.element.css("background-color", colors[colorIndex]);
+  colorIndex = (colorIndex + 1) % colors.length;
 
 
 
