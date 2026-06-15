@@ -12,7 +12,7 @@ var highScoreElement = $("#highScore");
 // Game Variables
 var score = 0; // variable to keep track of the score
 var started = false; // variable to keep track of whether the game has started
-var colors = ["indigo", "darkblue", "blue", "skyblue", "lightblue", "skyblue", "blue", "darkblue"];
+var colors = ["indigo", "darkblue", "slateblue", "blue", "skyblue", "lightblue", "skyblue", "blue", "slateblue", "darkblue"];
 var colorIndex = 0;
 // TODO 4, Part 1: Create the apple variable
 var apple = {};
