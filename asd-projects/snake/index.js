@@ -51,7 +51,6 @@ function init() {
   // TODO 5, Part 2: initialize the snake
   snake.body = [];
   makeSnakeSquare(10,10);
-
   makeSnakeSquare(10,9);
   makeSnakeSquare(10,8);
   snake.head = snake.body[0];
@@ -238,9 +237,9 @@ function handleAppleCollision() {
   var row = snake.tail.row;
   var column = snake.tail.column;
   
-  // makeSnakeSquare(row, column);
-  // snake.tail.element.css("background-color", colors[colorIndex]);
-  // colorIndex = (colorIndex + 1) % colors.length;
+  makeSnakeSquare(row, column);
+  snake.tail.element.css("background-color", colors[colorIndex]);
+  colorIndex = (colorIndex + 1) % colors.length;
 
 }
 
@@ -318,8 +317,8 @@ function makeSnakeSquare(row, column) {
   }
   snake.body.push(snakeSquare);
   snake.tail = snakeSquare
-  snake.tail.element.css("background-color", colors[colorIndex]);
-  colorIndex = (colorIndex + 1) % colors.length;
+  // snake.tail.element.css("background-color", colors[colorIndex]);
+  // colorIndex = (colorIndex + 1) % colors.length;
 
 
 
