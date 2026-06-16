@@ -36,6 +36,9 @@ function runProgram(){
     speedX: 0,
     speedY: 0,
   }
+
+
+
   // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
 
@@ -212,6 +215,9 @@ function runProgram(){
       walkerZ.x -= walkerZ.speedX
       walkerZ.y -= walkerZ.speedY
     }
+    function mineCollision() {
+
+  }
   }
     function makeMine (x, y, mined){
       $(mined).empty()
