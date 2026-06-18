@@ -18,12 +18,14 @@ const LEVELS = [
         kind: "basicPlatform",
         x: 800,
         y: groundY - 80,
+        contactHealthChange: -5,
       },
       { 
         type: "platform", 
         kind: "basicPlatform", 
         x: 600, y: 
-        groundY - 80 
+        groundY - 80, 
+        contactHealthChange: -10,
       },
       {
         type: "platform",
@@ -36,6 +38,7 @@ const LEVELS = [
         kind: "basicPlatform",
         x: 1200,
         y: groundY - 80,
+        hp: 0,
       },
 
       { type: "goal", kind: "flag", x: 2000, y: groundY },
@@ -46,8 +49,17 @@ const LEVELS = [
     speed: 3,
     gameObjects: [
       { type: "obstacle", kind: "spikes", x: 1600, y: groundY },
-      { type: "enemy", kind: "bug", x: 1600, y: groundY },
-      { type: "powerup", kind: "healthUp", x: 1600, y: groundY - 50 },
+      { type: "obstacle", kind: "spikes", x: 1400, y: groundY },
+      { type: "obstacle", kind: "spikes", x: 1200, y: groundY },
+      { type: "obstacle", kind: "spikes", x: 1000, y: groundY },
+      { type: "obstacle", kind: "spikes", x: 800, y: groundY },
+      { type: "enemy", kind: "bug", x: 1500, y: groundY },
+      { type: "enemy", kind: "bug", x: 1300, y: groundY },
+      { type: "enemy", kind: "bug", x: 1100, y: groundY },
+      { type: "enemy", kind: "bug", x: 700, y: groundY },
+      { type: "powerup", kind: "healthUp", x: 1200, y: groundY - 50 },
+      { type: "powerup", kind: "healthUp", x: 600, y: groundY - 50 },
+      { type: "powerup", kind: "healthUp", x: 200, y: groundY - 50 },
       {
         type: "platform",
         kind: "basicPlatform",
@@ -71,7 +83,49 @@ const LEVELS = [
         hp: 0,
       },
 
-      { type: "goal", kind: "flag", x: 2250, y: groundY },
+      { type: "goal", kind: "flag", x: 3000, y: groundY },
+    ],
+  },
+  {
+    name: "Level 3",
+    speed: 5,
+    gameObjects: [
+      { type: "obstacle", kind: "spikes", x: 1600, y: groundY },
+      { type: "obstacle", kind: "spikes", x: 1400, y: groundY },
+      { type: "obstacle", kind: "spikes", x: 1200, y: groundY },
+      { type: "obstacle", kind: "spikes", x: 1000, y: groundY },
+      { type: "obstacle", kind: "spikes", x: 800, y: groundY },
+      { type: "enemy", kind: "bug", x: 1500, y: groundY },
+      { type: "enemy", kind: "bug", x: 1300, y: groundY },
+      { type: "enemy", kind: "bug", x: 1100, y: groundY },
+      { type: "enemy", kind: "bug", x: 700, y: groundY },
+      { type: "powerup", kind: "healthUp", x: 1200, y: groundY - 50 },
+      { type: "powerup", kind: "healthUp", x: 600, y: groundY - 50 },
+      { type: "powerup", kind: "healthUp", x: 200, y: groundY - 50 },
+      {
+        type: "platform",
+        kind: "basicPlatform",
+        x: 800,
+        y: groundY - 100,
+        contactHealthChange: -5,
+      },
+      { type: "platform", kind: "basicPlatform", x: 600, y: groundY - 60 },
+      {
+        type: "platform",
+        kind: "basicPlatform",
+        x: 1000,
+        y: groundY - 40,
+        contactHealthChange: -10,
+      },
+      {
+        type: "platform",
+        kind: "basicPlatform",
+        x: 1200,
+        y: groundY - 80,
+        hp: 0,
+      },
+
+      { type: "goal", kind: "flag", x: 3000, y: groundY },
     ],
   },
 ];

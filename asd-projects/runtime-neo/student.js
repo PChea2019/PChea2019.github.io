@@ -63,11 +63,11 @@ function moveGameObjects(objectList) {
 }
 
 function handleProjectileCollisions() {
-  // TODO 8: Handle collisions between projectiles and enemies
+  //TODO 8: Handle collisions between projectiles and enemies
   for (var i = 0; i < gameObjects.length; i++){
     var currentObject = gameObjects[i]
-    for (var i = 0; i < projectiles.length; i++){
-      var currentProjectile = projectile[i];
+    for (var j = 0; j < projectiles.length; j++){
+      var currentProjectile = projectile[j];
       if (isCollidingWithProjectile(currentProjectile, currentObject) === true) {
         handleProjectObjectCollision(i, j)
       }
@@ -78,8 +78,22 @@ function handleProjectileCollisions() {
 
 function handleHallebotGenericCollisions() {
   // TODO 9: Handle collisions between Hallebot and game objects
+  for (var i = 0; i < gameObjects.length, i++){
+    var currentObject = gameObjects[i]
+    if (gameObjects[i].type !== "platform"){
+      for (isGenericCollision = true){
+        handleHallebotGenericCollisions(i)
+      }
+    }
+  }
 }
 
 function triggerLevelTransition() {
   // TODO 10: Transition to the next level or show win screen
+  currentLevelindex +=
+  currentLevel = LEVELS[currentLevelIndex]
+  gameObjects = []
+  if (currentLevelIndex <= LEVELS.length) {
+    player.winConditionMet = true
+  }
 }
