@@ -13,33 +13,45 @@ body {
 
 #PaddleL {
   background-color: RoyalBlue;
-  width: 25px;
-  height: 100px;
+  width: 20px;
+  height: 80px;
   position: absolute;
-  left: 0px;   /* Uncomment if you want to set a "starting" position */
+  left: 10px;   /* Uncomment if you want to set a "starting" position */
   top: 0px;    /* Uncomment if you want to set a "starting" position */
 }
 #PaddleR {
   background-color: tomato;
-  width: 25px;
-  height: 100px;
+  width: 20px;
+  height: 80px;
   position: absolute;
-  left: 415px;   /* Uncomment if you want to set a "starting" position */
+  left: 410px;   /* Uncomment if you want to set a "starting" position */
   top: 0px;    /* Uncomment if you want to set a "starting" position */
 }
 #Ball {
   background-color: goldenrod;
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  border: 2px dashed gold;
   position: absolute;
   left: 200px;   /* Uncomment if you want to set a "starting" position */
   top: 200px;    /* Uncomment if you want to set a "starting" position */
 }
  #ScoreR {
-  color: indianred;
+  color: red;
+  font-family: fantasy;
+  font-size: 20px;
+  height: 40px;
+  position: absolute;
+  left: 385px;
  }
-  #ScoreR {
-  color: midnightblue;
+  #ScoreL {
+  color: blue;
+  font-family: sans-serif;
+  font-size: 20px;
+  height: 40px;
+  position: absolute;
+  left: 10px;
  }
 
    
