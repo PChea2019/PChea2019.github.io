@@ -20,7 +20,7 @@ function resetAndRender() {
 // all of your apply functions
 function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here
-  applyFilter();
+  applyFilter(decreaseBlue);
   
 
   // do not change the below line of code
@@ -32,15 +32,15 @@ function applyAndRender() {
 /////////////////////////////////////////////////////////
 
 // TODO 1, 2, 3 & 5: Create the applyFilter function here
-function applyFilter() {
+function applyFilter(filterFunction) {
   for (var r = 0; r < image.length; r++){
     for (var c = 0; c < image[r].length; c++){
       var pixel = image[r][c];
       var pixelArray = rgbStringToArray(pixel)
+      // Modifyin' color values
+      filterFunction(pixelArray)
       var updatedPixel = rgbArrayToString(pixelArray)
-      image[i][j] = updatedPixel
-      //update the red channel value of PixelArray and set value to 200
-      
+      image[r][c] = updatedPixel
     }
   }
 }
@@ -49,14 +49,30 @@ function applyFilter() {
 
 
 // TODO 6: Create the keepInBounds function
-
+function keepInBounds (num) {
+  if (num < 0){
+    return 0
+  }
+  else if (num > 255) {
+    return 255
+  }
+  else {
+    return num
+  }
+}
 
 // TODO 4: Create reddify filter function
-const RED = 220;
-const GREEN = 1;
-const BLUE = 2;
+function reddify (array){
+  array[RED] = 200
+
+}
 
 // TODO 7 & 8: Create more filter functions
+function decreaseBlue(pxarray) {
+  pxarray[BLUE] = BLUE - 50
+  keepInBounds(BLUE)
+  pxarray[BLUE] = BLUE
+}
 
 
 // CHALLENGE code goes below here
