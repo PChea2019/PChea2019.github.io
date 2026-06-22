@@ -20,7 +20,7 @@ function resetAndRender() {
 // all of your apply functions
 function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here
-
+  applyFilter();
   
 
   // do not change the below line of code
@@ -32,7 +32,18 @@ function applyAndRender() {
 /////////////////////////////////////////////////////////
 
 // TODO 1, 2, 3 & 5: Create the applyFilter function here
-
+function applyFilter() {
+  for (var r = 0; r < image.length; r++){
+    for (var c = 0; c < image[r].length; c++){
+      var pixel = image[r][c];
+      var pixelArray = rgbStringToArray(pixel)
+      var updatedPixel = rgbArrayToString(pixelArray)
+      image[i][j] = updatedPixel
+      //update the red channel value of PixelArray and set value to 200
+      
+    }
+  }
+}
 
 // TODO 9 Create the applyFilterNoBackground function
 
@@ -41,7 +52,9 @@ function applyAndRender() {
 
 
 // TODO 4: Create reddify filter function
-
+const RED = 220;
+const GREEN = 1;
+const BLUE = 2;
 
 // TODO 7 & 8: Create more filter functions
 
