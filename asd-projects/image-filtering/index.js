@@ -20,11 +20,10 @@ function resetAndRender() {
 // all of your apply functions
 function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here
-  applyFilterNoBackground(increaseGreenByBlue);
-  applyFilter(decreaseBlue);
-  applyFilterNoBackground(decreaseBlue);
   applyFilter(reddify);
-
+  applyFilterNoBackground(decreaseBlue);
+  applyFilter(increaseGreenByBlue);
+  applyFilterNoBackground(reddify);
   // do not change the below line of code
   render($("#display"), image);
 }
@@ -58,8 +57,6 @@ function applyFilterNoBackground (filterFunction) {
         var filtered = filterFunction(stringed)
         image [r][c] = rgbArrayToString(filtered)
       }
-
-
     }
   }
 }
