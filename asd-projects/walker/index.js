@@ -49,7 +49,7 @@ function runProgram(){
   Note: You can have multiple event listeners for different types of events.
   */
   $(document).on('keydown', handleKeyDown);     
-  $(document).on('keyup', handleKeyUp)                     
+  $(document).on('keyup', handleKeyUp);                     
 
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////

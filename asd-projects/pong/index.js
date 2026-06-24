@@ -27,8 +27,8 @@ function runProgram(){
   paddleL.y = 0;
   paddleL.width = 20;
   paddleL.height = 80;
-  paddleL.speedX = 1;
-  paddleL.speedY = 1;
+  paddleL.speedX = 0;
+  paddleL.speedY = 0;
   
   var paddleR = {}
   paddleR.id = paddleR;
@@ -36,8 +36,8 @@ function runProgram(){
   paddleR.y = 0;
   paddleR.width = 20;
   paddleR.height = 80;
-  paddleR.speedX = 1;
-  paddleR.speedY = 1;
+  paddleR.speedX = 0;
+  paddleR.speedY = 0;
 
 
 
@@ -58,7 +58,7 @@ function runProgram(){
 
   //Keyboard Keys
 
-  var KEY = {
+  const KEY = {
     LEFT: 37,
     RIGHT: 39,
     UP: 38,
@@ -71,82 +71,86 @@ function runProgram(){
 
   //Handling Keys pressed
 
-  function handleKeyDown () {
-    var keycode = event.which;
+  function handleKeyDown (event) {
+    var keycode = event.which
     console.log(keycode);
-    if (keycode === KEY.DOWN) {
-      console.log("down pressed")
-      //paddleR.speedY = -5
+
+    if (event.which === KEY.DOWN) {
+      //console.log("down pressed")
+      paddleR.speedY = 5
     }
-    if (keycode === KEY.UP) {
-      console.log("up pressed")
-      //paddleR.speedY = 5
+    if (event.which === KEY.UP) {
+      //console.log("up pressed")
+      paddleR.speedY = -5
     }
-    if (keycode === KEY.S) {
-      console.log("S pressed")
-      //paddleL.speedY = -5
+    if (event.which === KEY.S) {
+      //console.log("S pressed")
+      paddleL.speedY = 5
     }
-    if (keycode === KEY.W) {
-      console.log("W pressed")
-      //paddleL.speedY = 5
+    if (event.which === KEY.W) {
+      //console.log("W pressed")
+      paddleL.speedY = -5
     }
   }
 
   //Handling Keys released
 
-  function handleKeyUp () {
-    var keycode = event.which;
+  function handleKeyUp (event) {
+    var keycode = event.which
     console.log(keycode);
-    if (keycode === KEY.DOWN) {
-      console.log("down released")
-      //paddleR.speedY = 0
+    if (event.which === KEY.DOWN) {
+      //console.log("down released")
+      paddleR.speedY = 0
     }
-    if (keycode === KEY.UP) {
-      console.log("up released")
-      //paddleR.speedY = 0
+    if (event.which === KEY.UP) {
+      //console.log("up released")
+      paddleR.speedY = 0
     }
-    if (keycode === KEY.W) {
-      console.log("W released")
-      //paddleL.speedY = 0
+    if (event.which === KEY.W) {
+      //console.log("W released")
+      paddleL.speedY = 0
     }
-    if (keycode === KEY.S) {
-      console.log("S released")
-      //paddleL.speedY = 0
+    if (event.which === KEY.S) {
+      //console.log("S released")
+      paddleL.speedY = 0
     }
   }
   
 
   // one-time setup
   let interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
-  $(document).on('eventType', handleEvent);    
+  //$(document).on('eventType', handleEvent);  
+  $(document).on('keydown', handleKeyDown);
+  $(document).on('keyup', handleKeyUp);  
   startBall()                       // change 'eventType' to the type of event you want to handle
 
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
+  $(document).on('keydown', handleKeyDown);
+  $(document).on('keyup', handleKeyUp);
+
 
   /* 
   On each "tick" of the timer, a new frame is dynamically drawn using JavaScript
   by calling this function and executing the code inside.
   */
   function newFrame() {
-    // ball.x += ball.speedX
-    // $("#ball").css("left", ball.x);
+    redrawGameItem()
 
-    // ball.y += ball.speedY
-    // $("#ball").css("top", ball.y);    
-
+    moveObject()
   }
 
   // handling keys being pressed and keys being released
 
-  $(document).on('keydown', handleKeyDown)
-  $(document).on('keyup', handleKeyUp)
+  $(document).on('keydown', handleKeyDown);
+  $(document).on('keyup', handleKeyUp);
 
   /* 
   Called in response to events.
   */
   function handleEvent(event) {
+    
 
   }
 
@@ -161,6 +165,22 @@ function runProgram(){
 
     // turn off event handlers
     $(document).off();
+  }
+
+  function redrawGameItem (){
+    ball.x = ball.x + ball.speedX
+    ball.y = ball.y + ball.speedY
+    paddleL.y = paddleL.y + paddleL.speedY
+    paddleR.y = paddleL.y + paddleL.speedY
+  }
+
+  function moveObject() {
+    $("#paddleL").css("left", paddleL.x)
+    $("#paddleL").css("top", paddleL.y)
+    $("#paddleR").css("left", paddleR.x)
+    $("#paddleR").css("top", paddleR.y)
+    $("#ball").css("left", ball.x)
+    $("#ball").css("top", ball.y)
   }
   function startBall () {
     ball.x = 200
