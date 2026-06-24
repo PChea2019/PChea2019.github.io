@@ -78,10 +78,10 @@ function handleProjectileCollisions() {
 
 function handleHallebotGenericCollisions() {
   // TODO 9: Handle collisions between Hallebot and game objects
-  for (var i = 0; i < gameObjects.length, i++){
+  for (var i = 0; i < gameObjects.length; i++) {
     var currentObject = gameObjects[i]
     if (gameObjects[i].type !== "platform"){
-      for (isGenericCollision = true){
+      if (isGenericCollision === true) {
         handleHallebotGenericCollisions(i)
       }
     }
