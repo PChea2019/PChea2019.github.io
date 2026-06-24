@@ -5,27 +5,27 @@ const LEVELS = [
     name: "Level 1",
     speed: 2,
     gameObjects: [
-      { type: "obstacle", kind: "spikes", x:  400, y: groundY, contactHealthChange: -20 },
-      { type: "obstacle", kind: "spikes", x: 1800, y: groundY, contactHealthChange: -20 },
-      { type: "obstacle", kind: "spikes", x: 1600, y: groundY, contactHealthChange: -20 },
-      { type: "enemy", kind: "bug", x: 800, y: groundY, contactHealthChange: -20, hp: 20 },
-      { type: "enemy", kind: "bug", x: 1200, y: groundY, contactHealthChange: -20, hp: 20 },
-      { type: "enemy", kind: "bug", x: 1000, y: groundY - 120, contactHealthChange: -20, hp: 20},
-      { type: "powerup", kind: "healthUp", x: 1600, y: groundY - 100, collect: true, contactHealthChange: 10  },
-      { type: "powerup", kind: "healthUp", x: 600, y: groundY - 50, collect: true, contactHealthChange: 10 },
+      { type: "obstacle", kind: "spikes", x:  400, y: groundY},
+      { type: "obstacle", kind: "spikes", x: 1800, y: groundY},
+      { type: "obstacle", kind: "spikes", x: 1600, y: groundY},
+      { type: "enemy", kind: "bug", x: 800, y: groundY},
+      { type: "enemy", kind: "bug", x: 1200, y: groundY},
+      { type: "enemy", kind: "bug", x: 1000, y: groundY - 120},
+      { type: "powerup", kind: "healthUp", x: 1600, y: groundY - 100},
+      { type: "powerup", kind: "healthUp", x: 400, y: groundY - 100},
       {
         type: "platform",
         kind: "basicPlatform",
         x: 800,
         y: groundY - 80,
-        contactHealthChange: -5,
+        
       },
       { 
         type: "platform", 
         kind: "basicPlatform", 
         x: 600, y: 
         groundY - 80, 
-        contactHealthChange: -10,
+       
       },
       {
         type: "platform",
@@ -38,7 +38,7 @@ const LEVELS = [
         kind: "basicPlatform",
         x: 1200,
         y: groundY - 80,
-        hp: 0,
+        
       },
 
       { type: "goal", kind: "flag", x: 2000, y: groundY },
@@ -65,7 +65,7 @@ const LEVELS = [
         kind: "basicPlatform",
         x: 800,
         y: groundY - 100,
-        contactHealthChange: -5,
+        
       },
       { type: "platform", kind: "basicPlatform", x: 600, y: groundY - 60 },
       {
@@ -73,14 +73,14 @@ const LEVELS = [
         kind: "basicPlatform",
         x: 1000,
         y: groundY - 40,
-        contactHealthChange: -10,
+        
       },
       {
         type: "platform",
         kind: "basicPlatform",
         x: 1200,
         y: groundY - 80,
-        hp: 0,
+        
       },
 
       { type: "goal", kind: "flag", x: 3000, y: groundY },
@@ -107,7 +107,7 @@ const LEVELS = [
         kind: "basicPlatform",
         x: 800,
         y: groundY - 100,
-        contactHealthChange: -5,
+        
       },
       { type: "platform", kind: "basicPlatform", x: 600, y: groundY - 60 },
       {
@@ -115,7 +115,7 @@ const LEVELS = [
         kind: "basicPlatform",
         x: 1000,
         y: groundY - 40,
-        contactHealthChange: -10,
+        
       },
       {
         type: "platform",
@@ -168,7 +168,7 @@ const DEFAULT_VALUES = {
       maxY: groundY - 75,
       contactHealthChange: -30,
       contactScoreChange: 0,
-      projectileHealthChange: 0,
+      projectileHealthChange: -1,
       projectileScoreChange: 50,
       hp: 3,
       collect: false,

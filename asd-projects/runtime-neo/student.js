@@ -67,9 +67,9 @@ function handleProjectileCollisions() {
   for (var i = 0; i < gameObjects.length; i++){
     var currentObject = gameObjects[i]
     for (var j = 0; j < projectiles.length; j++){
-      var currentProjectile = projectile[j];
+      var currentProjectile = projectiles[j];
       if (isCollidingWithProjectile(currentProjectile, currentObject) === true) {
-        handleProjectObjectCollision(i, j)
+        handleProjectileObjectCollision(i, j)
       }
 
     }
@@ -81,8 +81,8 @@ function handleHallebotGenericCollisions() {
   for (var i = 0; i < gameObjects.length; i++) {
     var currentObject = gameObjects[i]
     if (gameObjects[i].type !== "platform"){
-      if (isGenericCollision === true) {
-        handleHallebotGenericCollisions(i)
+      if (isGenericCollision(currentObject) === true) {
+        handleHallebotGenericCollision(i)
       }
     }
   }
@@ -90,7 +90,7 @@ function handleHallebotGenericCollisions() {
 
 function triggerLevelTransition() {
   // TODO 10: Transition to the next level or show win screen
-  currentLevelindex +=
+  currentLevelIndex += 1
   currentLevel = LEVELS[currentLevelIndex]
   gameObjects = []
   if (currentLevelIndex <= LEVELS.length) {
