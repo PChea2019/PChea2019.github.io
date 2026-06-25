@@ -12,7 +12,7 @@ function runProgram(){
   const FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
   
   // Game Item Objects
-  var ball = {}
+  let ball = {}
   ball.id = ball;
   ball.x = 200;
   ball.y = 200;
@@ -21,7 +21,7 @@ function runProgram(){
   ball.speedX = 1;
   ball.speedY = 1;
 
-  var paddleL = {}
+  let paddleL = {}
   paddleL.id = paddleL;
   paddleL.x = 10;
   paddleL.y = 0;
@@ -30,7 +30,7 @@ function runProgram(){
   paddleL.speedX = 0;
   paddleL.speedY = 0;
   
-  var paddleR = {}
+  let paddleR = {}
   paddleR.id = paddleR;
   paddleR.x = 410;
   paddleR.y = 0;
@@ -73,7 +73,7 @@ function runProgram(){
 
   function handleKeyDown (event) {
     var keycode = event.which
-    console.log(keycode);
+    //console.log(keycode);
 
     if (event.which === KEY.DOWN) {
       //console.log("down pressed")
@@ -97,7 +97,7 @@ function runProgram(){
 
   function handleKeyUp (event) {
     var keycode = event.which
-    console.log(keycode);
+    //console.log(keycode);
     if (event.which === KEY.DOWN) {
       //console.log("down released")
       paddleR.speedY = 0
@@ -120,15 +120,15 @@ function runProgram(){
   // one-time setup
   let interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
   //$(document).on('eventType', handleEvent);  
-  $(document).on('keydown', handleKeyDown);
-  $(document).on('keyup', handleKeyUp);  
+  
   startBall()                       // change 'eventType' to the type of event you want to handle
-
+  $(document).on('keydown', handleKeyDown);
+  $(document).on('keyup', handleKeyUp);
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
-  $(document).on('keydown', handleKeyDown);
-  $(document).on('keyup', handleKeyUp);
+  // $(document).on('keydown', handleKeyDown);
+  // $(document).on('keyup', handleKeyUp);
 
 
   /* 
@@ -137,22 +137,22 @@ function runProgram(){
   */
   function newFrame() {
     redrawGameItem()
-
+    //console.log(paddleR.x, paddleR.speedX)
     moveObject()
   }
 
   // handling keys being pressed and keys being released
 
-  $(document).on('keydown', handleKeyDown);
-  $(document).on('keyup', handleKeyUp);
+  // $(document).on('keydown', handleKeyDown);
+  // $(document).on('keyup', handleKeyUp);
 
   /* 
   Called in response to events.
   */
-  function handleEvent(event) {
+  // function handleEvent(event) {
     
 
-  }
+  // }
 
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////

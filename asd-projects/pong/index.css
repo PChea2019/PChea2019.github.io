@@ -35,7 +35,7 @@ body {
   border: 2px dashed gold;
   position: absolute;
   left: 200px;   /* Uncomment if you want to set a "starting" position */
-  top: 200px;    /* Uncomment if you want to set a "starting" position */
+  top: 200px;     /* Uncomment if you want to set a "starting" position */
 }
  #ScoreR {
   color: red;

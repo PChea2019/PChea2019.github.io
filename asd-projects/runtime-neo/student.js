@@ -65,11 +65,11 @@ function moveGameObjects(objectList) {
 function handleProjectileCollisions() {
   //TODO 8: Handle collisions between projectiles and enemies
   for (var i = 0; i < gameObjects.length; i++){
-    var currentObject = gameObjects[i]
+    var currentObject = gameObjects[i];
     for (var j = 0; j < projectiles.length; j++){
       var currentProjectile = projectiles[j];
       if (isCollidingWithProjectile(currentProjectile, currentObject) === true) {
-        handleProjectileObjectCollision(i, j)
+        handleProjectileObjectCollision(j, i)
       }
 
     }
