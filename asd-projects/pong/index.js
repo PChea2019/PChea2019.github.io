@@ -137,7 +137,7 @@ function runProgram(){
   */
   function newFrame() {
     redrawGameItem()
-    //console.log(paddleR.x, paddleR.speedX)
+    //console.log(paddleR.y, paddleR.speedY, paddleL.y, paddleL.speedY)
     moveObject()
   }
 
@@ -170,17 +170,17 @@ function runProgram(){
   function redrawGameItem (){
     ball.x = ball.x + ball.speedX
     ball.y = ball.y + ball.speedY
+    paddleR.y = paddleR.y + paddleR.speedY
     paddleL.y = paddleL.y + paddleL.speedY
-    paddleR.y = paddleL.y + paddleL.speedY
   }
 
   function moveObject() {
-    $("#paddleL").css("left", paddleL.x)
-    $("#paddleL").css("top", paddleL.y)
-    $("#paddleR").css("left", paddleR.x)
-    $("#paddleR").css("top", paddleR.y)
-    $("#ball").css("left", ball.x)
-    $("#ball").css("top", ball.y)
+    $("#PaddleL").css("left", paddleL.x)
+    $("#PaddleL").css("top", paddleL.y)
+    $("#PaddleR").css("left", paddleR.x)
+    $("#PaddleR").css("top", paddleR.y)
+    $("#Ball").css("left", ball.x)
+    $("#Ball").css("top", ball.y)
   }
   function startBall () {
     ball.x = 200
