@@ -38,7 +38,9 @@ function runProgram(){
   paddleR.height = 80;
   paddleR.speedX = 0;
   paddleR.speedY = 0;
-
+  
+  const board_width = $("#board").width()
+  const board_height = $("#board").height()
 
 
   // var ball = gameObject(ball, 200, 200, 20, 20, 1, 1)
@@ -138,6 +140,8 @@ function runProgram(){
   function newFrame() {
     redrawGameItem()
     //console.log(paddleR.y, paddleR.speedY, paddleL.y, paddleL.speedY)
+    wallCollision()
+    //paddleCollision()
     moveObject()
   }
 
@@ -172,6 +176,50 @@ function runProgram(){
     ball.y = ball.y + ball.speedY
     paddleR.y = paddleR.y + paddleR.speedY
     paddleL.y = paddleL.y + paddleL.speedY
+  }
+  
+  function wallCollision () {
+    if (ball.x < 0) {
+      ball.speedX *= -1
+    }
+    if (ball.y < 0) {
+      ball.speedY *= -1
+    }
+    if (ball.x + 20 > $("#board").width()) {
+      ball.speedX *= -1
+    }
+    if (ball.y + 20 > $("#board").height()) {
+      ball.speedY *= -1
+    }
+
+    if (paddleL.x < 0) {
+      paddleL.x -= paddleL.speedX
+    }
+    if (paddleL.y < 0) {
+      paddleL.y -= paddleL.speedY
+    }
+    if (paddleL.x + 20 > $("#board").width()) {
+      paddleL.x -= paddleL.speedX
+    }
+    if (paddleL.y + 80 > $("#board").height()) {
+      paddleL.y -= paddleL.speedY
+    }
+
+    if (paddleR.x < 0) {
+      paddleR.x -= paddleR.speedX
+    }
+    if (paddleR.y < 0) {
+      paddleR.y -= paddleR.speedY
+    }
+    if (paddleR.x + 20 > $("#board").width()) {
+      paddleR.x -= paddleR.speedX
+    }
+    if (paddleR.y + 80 > $("#board").height()) {
+      paddleR.y -= paddleR.speedY
+    }
+
+
+
   }
 
   function moveObject() {
