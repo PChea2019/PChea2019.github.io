@@ -215,9 +215,9 @@ function runProgram(){
       walkerZ.x -= walkerZ.speedX
       walkerZ.y -= walkerZ.speedY
     }
-    function mineCollision() {
+  //   function mineCollision() {
 
-  }
+  // }
   }
     function makeMine (x, y, mined){
       $(mined).empty()

@@ -12,6 +12,8 @@ function runProgram(){
   const FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
   
   // Game Item Objects
+  let scoreR = 0
+  let scoreL = 0
   let ball = {}
   ball.id = ball;
   ball.x = 200;
@@ -141,7 +143,9 @@ function runProgram(){
     redrawGameItem()
     //console.log(paddleR.y, paddleR.speedY, paddleL.y, paddleL.speedY)
     wallCollision()
-    //paddleCollision()
+    paddleCollision()
+    playerPoint()
+    ballReset()
     moveObject()
   }
 
@@ -177,6 +181,7 @@ function runProgram(){
     paddleR.y = paddleR.y + paddleR.speedY
     paddleL.y = paddleL.y + paddleL.speedY
   }
+
   
   function wallCollision () {
     if (ball.x < 0) {
@@ -217,10 +222,54 @@ function runProgram(){
     if (paddleR.y + 80 > $("#board").height()) {
       paddleR.y -= paddleR.speedY
     }
-
-
-
   }
+  
+  function paddleCollision(){
+    if (collidingObj (paddleL, ball)){
+      ball.speedX *= -1
+      ball.speedY *= 1
+    }
+    if (collidingObj (paddleR, ball)){
+      ball.speedX *= -1
+      ball.speedY *= 1
+    }
+  }
+
+  function collidingObj(paddle, ball){
+    if (paddle.x < ball.x + 20 && paddle.x + 20 > ball.x && paddle.y < ball.y + 20 && paddle.y + 80 > ball.y){
+      return true
+    }
+    else {
+      return false
+    }
+  }
+
+  function ballReset() {
+    if (playerPoint()){
+      startBall()
+    }
+    if (scoreR < 3 || scoreL < 3){
+      $("#MatchPoint").hide()
+    }
+    if (5 > scoreR >= 4 || 5 > scoreL >= 4){
+      $("#MatchPoint").show()
+    }
+  }
+
+  function playerPoint(){
+    if (ball.x < 10){
+      scoreR += 1
+      $("#ScoreR").text("Score: " + scoreR)
+      return true
+    }
+    if (ball.x > 410){
+      scoreL+= 1
+      $("#ScoreL").text("Score: " + scoreL)
+      return true
+    }
+    return false
+  }
+
 
   function moveObject() {
     $("#PaddleL").css("left", paddleL.x)
