@@ -145,7 +145,6 @@ function runProgram(){
     wallCollision()
     paddleCollision()
     playerPoint()
-    ballReset()
     moveObject()
   }
 
@@ -170,6 +169,16 @@ function runProgram(){
   function endGame() {
     // stop the interval timer
     clearInterval(interval);
+    if (scoreR === 5){
+      alert ("Player 2 Wins")
+    }
+    if (scoreL === 5){
+      alert ("Player 1 wins")
+    }
+    scoreR = 0
+    scoreL = 0
+    $("#ScoreR").text("Score: " + scoreR)
+    $("#ScoreL").text("Score: " + scoreL)
 
     // turn off event handlers
     $(document).off();
@@ -244,30 +253,29 @@ function runProgram(){
     }
   }
 
-  function ballReset() {
-    if (playerPoint()){
-      startBall()
-    }
-    if (scoreR < 3 || scoreL < 3){
-      $("#MatchPoint").hide()
-    }
-    if (5 > scoreR >= 4 || 5 > scoreL >= 4){
-      $("#MatchPoint").show()
-    }
-  }
+
 
   function playerPoint(){
     if (ball.x < 10){
       scoreR += 1
       $("#ScoreR").text("Score: " + scoreR)
-      return true
+      startBall()
     }
     if (ball.x > 410){
-      scoreL+= 1
+      scoreL += 1
       $("#ScoreL").text("Score: " + scoreL)
-      return true
+      startBall()
     }
-    return false
+    if (scoreR === 4 || scoreL === 4){
+      $("#MatchPoint").show()
+    }
+    else if (scoreR === 5 || scoreL === 5){
+      $("#MatchPoint").hide()
+      endGame()
+    }
+    else{
+      $("#MatchPoint").hide()
+    }
   }
 
 
