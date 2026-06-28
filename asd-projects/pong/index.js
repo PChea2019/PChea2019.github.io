@@ -110,11 +110,11 @@ function runProgram(){
       //console.log("up released")
       paddleR.speedY = 0
     }
-    if (event.which === KEY.W) {
+    if (event.which === KEY.S) {
       //console.log("W released")
       paddleL.speedY = 0
     }
-    if (event.which === KEY.S) {
+    if (event.which === KEY.W) {
       //console.log("S released")
       paddleL.speedY = 0
     }
@@ -128,6 +128,7 @@ function runProgram(){
   startBall()                     // change 'eventType' to the type of event you want to handle
   $(document).on('keydown', handleKeyDown);
   $(document).on('keyup', handleKeyUp);
+  $(document).click(resetti)
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
@@ -169,6 +170,10 @@ function runProgram(){
   function endGame() {
     // stop the interval timer
     clearInterval(interval);
+    ball.x = 200
+    ball.y = 200
+    ball.speedX = 0
+    ball.speedY = 0
     if (scoreR === 5){
       alert ("Player 2 Wins")
     }
@@ -179,9 +184,10 @@ function runProgram(){
     scoreL = 0
     $("#ScoreR").text("Score: " + scoreR)
     $("#ScoreL").text("Score: " + scoreL)
+    $("#button").show()
 
     // turn off event handlers
-    $(document).off();
+    //$(document).off();
   }
 
   function redrawGameItem (){
@@ -190,6 +196,7 @@ function runProgram(){
     paddleR.y = paddleR.y + paddleR.speedY
     paddleL.y = paddleL.y + paddleL.speedY
   }
+
 
   
   function wallCollision () {
@@ -267,6 +274,12 @@ function runProgram(){
     }
   }
 
+  function resetti () {
+    interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);
+    startBall()
+    $("#button").hide()
+  }
+
 
 
   function playerPoint(){
@@ -274,6 +287,7 @@ function runProgram(){
       scoreR += 1
       $("#ScoreR").text("Score: " + scoreR)
       startBall()
+      $("#button").hide()
     }
     if (ball.x > 410){
       scoreL += 1
@@ -283,11 +297,11 @@ function runProgram(){
     if (scoreR === 4 || scoreL === 4){
       $("#MatchPoint").show()
     }
-    else if (scoreR === 5 || scoreL === 5){
+    if (scoreR === 5 || scoreL === 5){
       $("#MatchPoint").hide()
       endGame()
     }
-    else{
+    else {
       $("#MatchPoint").hide()
     }
   }
@@ -302,8 +316,11 @@ function runProgram(){
     $("#Ball").css("top", ball.y)
   }
   function startBall () {
+    $("#button").hide()
     ball.x = 200
     ball.y = 200
+    ball.speedX = 0
+    ball.speedY = 0
     ball.speedX = (Math.random() * 3 + 2) * (Math.random() > 0.5 ? -1 : 1);
     ball.speedY = (Math.random() * 3 + 2) * (Math.random() > 0.5 ? -1 : 1);
   }
