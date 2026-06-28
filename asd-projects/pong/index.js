@@ -125,7 +125,7 @@ function runProgram(){
   let interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
   //$(document).on('eventType', handleEvent);  
   
-  startBall()                       // change 'eventType' to the type of event you want to handle
+  startBall()                     // change 'eventType' to the type of event you want to handle
   $(document).on('keydown', handleKeyDown);
   $(document).on('keyup', handleKeyUp);
   ////////////////////////////////////////////////////////////////////////////////
@@ -237,10 +237,24 @@ function runProgram(){
     if (collidingObj (paddleL, ball)){
       ball.speedX *= -1
       ball.speedY *= 1
+      ball.speedY += 1
+      if (ball.speedX > 0){
+        ball.speedX += 1
+      }
+      if (ball.speedX < 0) {
+        ball.speedX -= 1
+      }
     }
     if (collidingObj (paddleR, ball)){
       ball.speedX *= -1
       ball.speedY *= 1
+      ball.speedY += 1
+      if (ball.speedX > 0){
+        ball.speedX += 1
+      }
+      if (ball.speedX < 0) {
+        ball.speedX -= 1
+      }
     }
   }
 
