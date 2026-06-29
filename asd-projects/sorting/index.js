@@ -15,12 +15,10 @@ The CSS ids you will work with are:
 
 // TODO 2: Implement bubbleSort
 async function bubbleSort (array){
-    for (var i = 0; i <= array.length; i++){
-        for (var j = 0; j <= array.length; j++){
-            if (array[j] < array[j - 1]){
-                var parsley = array[j]
-                array[j] = array[j - 1]
-                array[j - 1] = parsley
+    for (var i = 0; i < array.length; i++){
+        for (var j = 1; j < array.length; j++){
+            if (array[j].value < array[j - 1].value){
+                swap (array, i, j)
 
                 updateCounter(bubbleCounter);
                 await sleep()
@@ -37,14 +35,10 @@ async function bubbleSort (array){
 
 // TODO 1: Implement swap
 function swap (array, i, j){
-    for (i = 0; i < array.length; i++){
-        for (j = 0; j < array.length; j++){
         var ard = array[j]
         array[j] = array[i]
         array[i] = ard
-        drawSwap(array, i, j)            
-        }
-    }
+        drawSwap(array, i, j)
 }
 
 ///////////////////////////////////////////////////////////////////////
